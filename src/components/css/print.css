@@ -1,0 +1,17 @@
+@media print {
+    /* Hide the content of the page */
+      /* Display the content for printing */
+   #body {
+      display: none !important;
+    }
+   
+    .modal-header,
+    .modal-footer {
+      display: none !important;
+    }
+
+    #invoice {
+      display: block !important;
+    }
+  }
+  
