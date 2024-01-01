@@ -8,7 +8,7 @@ const CashierSalary = () => {
   const [salariesRecord, setSalariesRecord] = useState([]);
 
   useEffect(() => {
-    axios.get('https://pos-server-inventorysystem.up.railway.app/api/salary')
+    axios.get('http://localhost:5002/api/salary')
       .then((response) => {
         setSalariesRecord(response.data);
       })

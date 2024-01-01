@@ -8,7 +8,7 @@ const Purchases = () => {
   const [purchases, setPurchases] = useState([]);
 
   useEffect(() => {
-    axios.get('https://pos-server-inventorysystem.up.railway.app/api/purchase')
+    axios.get('http://localhost:5002/api/purchase')
       .then((response) => {
         setPurchases(response.data);
       })

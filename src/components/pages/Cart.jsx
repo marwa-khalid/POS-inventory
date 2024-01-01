@@ -87,7 +87,7 @@ const Cart = () => {
       try {
           if (scannedBarcode) {
             
-            axios.get(`https://pos-server-inventorysystem.up.railway.app/api/product/barcode/${scannedBarcode}`)
+            axios.get(`http://localhost:5002/api/product/barcode/${scannedBarcode}`)
               .then((response) => {
 
                 const productData = response.data;
@@ -143,7 +143,7 @@ const Cart = () => {
         sort: false,
         customBodyRender: (value) => (
           <img
-            src={`https://pos-server-inventorysystem.up.railway.app/${value}`}
+            src={`http://localhost:5002/${value}`}
             alt="Product"
             style={{ width: "50px", height: "50px" }}
           />

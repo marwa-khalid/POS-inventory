@@ -14,7 +14,7 @@ const Inventory = () => {
   useEffect(() => {
     // Fetch products data from your backend
     const getProducts = async()=>{
-      axios.get('https://pos-server-inventorysystem.up.railway.app/api/product')
+      axios.get('http://localhost:5002/api/product')
       .then((response) => {
         setProducts(response.data);
       })
@@ -50,7 +50,7 @@ const Inventory = () => {
   const handleDelete = (id) => {
     // Implement the delete logic for the given product ID
     console.log(`Delete product with ID: ${id}`);
-    axios.delete(`https://pos-server-inventorysystem.up.railway.app/api/product/${id}`)
+    axios.delete(`http://localhost:5002/api/product/${id}`)
     .then((res)=>{
       window.alert(res.data.message);
     }).catch((err)=>{
@@ -76,7 +76,7 @@ const Inventory = () => {
       label: 'Image',
       options: {
         customBodyRender: (value, tableMeta, updateValue) => (
-          <img alt='' src={`https://pos-server-inventorysystem.up.railway.app/${value}`} style={{ width: "50px" }} />
+          <img alt='' src={`http://localhost:5002/${value}`} style={{ width: "50px" }} />
         ),
       },
     },    

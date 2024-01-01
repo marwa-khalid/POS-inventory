@@ -17,7 +17,7 @@ function AddCashierModal( {onHide, show}) {
     };
 
     axios
-      .post('https://pos-server-inventorysystem.up.railway.app/api/user/register', data, {
+      .post('http://localhost:5002/api/user/register', data, {
         headers: {
           'Content-Type': 'application/json',
         },

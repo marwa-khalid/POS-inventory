@@ -30,7 +30,7 @@ const AddProductModal = ({ show, onHide}) => {
       sizeQuantityPairs: sizeQuantityPairs,
     };
     console.log(data);
-    axios.post("https://pos-server-inventorysystem.up.railway.app/api/product/AddProduct", data, {
+    axios.post("http://localhost:5002/api/product/AddProduct", data, {
       headers: {
         'Content-Type': 'multipart/form-data',
       }

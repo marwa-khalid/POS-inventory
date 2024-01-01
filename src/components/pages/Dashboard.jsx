@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   const fetchSalaryDetails = async () => {
     try {
-      const response = await axios.get("https://pos-server-inventorysystem.up.railway.app/api/salary");
+      const response = await axios.get("http://localhost:5002/api/salary");
       setOverallSalaries(
         response.data.reduce((total, item) => total + item.salary, 0)
       );
@@ -107,7 +107,7 @@ const Dashboard = () => {
 
   const fetchOrderDetails = async () => {
     try {
-      const response = await axios.get("https://pos-server-inventorysystem.up.railway.app/api/order");
+      const response = await axios.get("http://localhost:5002/api/order");
       const filteredOrders = response.data.filter(order => {
         return (
           order.status !== "Cancelled"
@@ -161,7 +161,7 @@ const Dashboard = () => {
 
   const fetchPurchaseDetails = async () => {
     try {
-      const response = await axios.get("https://pos-server-inventorysystem.up.railway.app/api/purchase");
+      const response = await axios.get("http://localhost:5002/api/purchase");
       setPurchaseDataArray(response.data);
       const purchaseDataArray = response.data;
       const currentDate = new Date().toISOString().split('T')[0];

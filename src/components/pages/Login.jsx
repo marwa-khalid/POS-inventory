@@ -39,7 +39,7 @@ const App = () => {
         userType
       };
     
-      await axios.post('https://pos-server-inventorysystem.up.railway.app/api/user/login', payload, {
+      await axios.post('http://localhost:5002/api/user/login', payload, {
         headers: {
           'Content-Type': 'application/json',
         },

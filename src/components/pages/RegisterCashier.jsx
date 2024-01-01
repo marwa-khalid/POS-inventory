@@ -10,7 +10,7 @@ const RegisterCashier = () => {
 
   useEffect(() => {
     // Fetch products data from your backend
-    axios.get('https://pos-server-inventorysystem.up.railway.app/api/user') // Update the URL
+    axios.get('http://localhost:5002/api/user') // Update the URL
       .then((response) => {
         setCashiers(response.data);
         //updateProducts(response.data); 
@@ -31,7 +31,7 @@ const RegisterCashier = () => {
     }
 
   const handleDelete = (id) => {
-    axios.delete(`https://pos-server-inventorysystem.up.railway.app/api/user/${id}`)
+    axios.delete(`http://localhost:5002/api/user/${id}`)
     .then((res)=>{
       window.alert(res.data.message);
     }).catch((err)=>{

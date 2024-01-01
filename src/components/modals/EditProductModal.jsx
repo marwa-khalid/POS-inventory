@@ -23,13 +23,13 @@ const EditProductModal = ({ show, onHide, productId }) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`https://pos-server-inventorysystem.up.railway.app/api/product/${productId}`);
+      const response = await axios.get(`http://localhost:5002/api/product/${productId}`);
       const product = response.data;
   
       setProductName(product.name);
       setProductPrice(product.price);
       setProductDescription(product.description);
-      setProductImage(product.image ? `https://pos-server-inventorysystem.up.railway.app/${product.image}` : '');
+      setProductImage(product.image ? `http://localhost:5002/${product.image}` : '');
       setProductCategory(product.category);
       setProductBarCodeNo(product.barCodeNo);
       setSizeQuantityPairs(product.sizeQuantityPairs);
@@ -52,7 +52,7 @@ const EditProductModal = ({ show, onHide, productId }) => {
       sizeQuantityPairs: sizeQuantityPairs,
     };
     console.log(data)
-    axios.put(`https://pos-server-inventorysystem.up.railway.app/api/product/${productId}`, data, {
+    axios.put(`http://localhost:5002/api/product/${productId}`, data, {
       headers: {
         'Content-Type': 'multipart/form-data',
       }

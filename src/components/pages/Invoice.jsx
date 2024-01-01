@@ -28,7 +28,7 @@ function Invoice({show, onHide, customerData, printReceipt}) {
     setCustomerContact(customerData.customerContact);
     setCustomerAddress(customerData.customerAddress);
     }
-    axios.get("https://pos-server-inventorysystem.up.railway.app/api/order")
+    axios.get("http://localhost:5002/api/order")
       .then((response) => {
         const orders = response.data;
         let maxInvoiceNumber = 0;
@@ -68,7 +68,7 @@ function Invoice({show, onHide, customerData, printReceipt}) {
       invoiceNumber:invoiceNumber
     }
     
-    axios.post("https://pos-server-inventorysystem.up.railway.app/api/order",data
+    axios.post("http://localhost:5002/api/order",data
     , {
       headers: {
         'Content-Type': 'application/json',

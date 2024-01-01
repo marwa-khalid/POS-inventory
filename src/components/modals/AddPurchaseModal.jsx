@@ -24,7 +24,7 @@ const AddPurchaseModal = ({ show, onHide}) => {
       purchaseDate,
     };
     console.log(data);
-    axios.post("https://pos-server-inventorysystem.up.railway.app/api/purchase", data)
+    axios.post("http://localhost:5002/api/purchase", data)
     .then((response) => {
       onHide();
       setWarehouseName('');

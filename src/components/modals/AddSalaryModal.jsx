@@ -20,7 +20,7 @@ const AddSalaryModal = ({ show, onHide }) => {
       salaryDate,
       employeeRole
     };
-    axios.post("https://pos-server-inventorysystem.up.railway.app/api/salary", employeeData)
+    axios.post("http://localhost:5002/api/salary", employeeData)
     .then((response) => {
       onHide();
       setEmployeeName('');

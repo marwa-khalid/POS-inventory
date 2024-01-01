@@ -17,7 +17,7 @@ const OrderScreen = () => {
 
   const fetchOrders = async()=>{
     
-    axios.get("https://pos-server-inventorysystem.up.railway.app/api/order")
+    axios.get("http://localhost:5002/api/order")
       .then(response => {
         setOrders(response.data);
       })
@@ -29,7 +29,7 @@ const OrderScreen = () => {
 
   const handleChangeStatus = (status, productId) => {
     console.log(status);
-    axios.put(`https://pos-server-inventorysystem.up.railway.app/api/order/${productId}`, { status: status }, {
+    axios.put(`http://localhost:5002/api/order/${productId}`, { status: status }, {
   headers: {
     'Content-Type': 'application/json', 
   },
@@ -78,7 +78,7 @@ const columns = [
               <div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                 <div style={{ position: 'relative' }}>
                   <img
-                    src={`https://pos-server-inventorysystem.up.railway.app/${product.image}`}
+                    src={`http://localhost:5002/${product.image}`}
                     alt={product.name}
                     style={{ width: "40px", height: "40px" }}
                   />
